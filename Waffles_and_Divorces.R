@@ -1,24 +1,11 @@
-Sys.setenv(DOWNLOAD_STATIC_LIBV8 = 1) # only necessary for Linux without the nodejs library / headers
-install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies = TRUE)
-devtools::install_github("stan-dev/cmdstanr")
-
-example(stan_model, package = "rstan", run.dontrun = TRUE)
 
 library("rstan")
 
-install.packages(c("mvtnorm","loo","coda"), repos="https://cloud.r-project.org/",dependencies=TRUE)
-options(repos=c(getOption('repos'), rethinking='http://xcelab.net/R'))
-install.packages('rethinking',type='source')
-
-devtools::install_github("rmcelreath/rethinking")
-
 library(rethinking)
+
+
 data("WaffleDivorce")
 waffle_data <- WaffleDivorce
-
-library(xlsx)
-write.xlsx(data, file = "waffles and divorce.xlsx",
-           sheetName = "Waffles", append = FALSE)
 
 #standardizing the predictors
 waffle_data$MedianAgeMarriage.standardized <- (waffle_data$MedianAgeMarriage-mean(waffle_data$MedianAgeMarriage))/sd(waffle_data$MedianAgeMarriage)
@@ -27,6 +14,10 @@ waffle_data$Marriage.Standardized <- (waffle_data$Marriage-mean(waffle_data$Marr
 #Create Waffle houses per million
 waffle_data$WHPerMillion <- waffle_data$WaffleHouses/waffle_data$Population
 
+# Write to excel for other visualizations on tableau
+library(xlsx)
+write.xlsx(data, file = "waffles and divorce.xlsx",
+           sheetName = "Waffles", append = FALSE)
 #divorce rate on waffle houses
 m5.0 <- map(
   alist(
