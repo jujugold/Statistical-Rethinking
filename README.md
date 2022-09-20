@@ -5,9 +5,10 @@ Here I review and appreciate the author's work, and add some of my own insights 
 
 
 ## Waffles and Divorce R file 
-Here I use a simple multivariate model to disprove the theory that the number of waffle houses in a state has any meaningful impact on that state's divorce rate. Instead it is a feature of the younge marriage age in southern states. Marriage rate could also be considered a factor, but I show with models and two different types of plots, predictor residuals plots and counterfactual plots, that marriage age is chiefly responsible.
+Here I use a simple multivariate model to disprove the theory that the number of waffle houses in a state has any meaningful impact on that state's divorce rate. Instead it is a feature of the younge marriage age in southern states. Marriage rate could also be considered a factor, but I show with models and two different types of plots, predictor residuals plots and counterfactual plots, that marriage age is chiefly responsible. I generate many graphs in the R code, but only a few are displayed here.
 
 ![Divorce and Waffle Houses by State_page-0001](https://user-images.githubusercontent.com/77739272/191348386-2d8e75d6-ff50-4103-b355-ff1a30b13e15.jpg)
+![Predicted Marriage Rate residuals from age](https://user-images.githubusercontent.com/77739272/191355203-1f37a0a1-7623-400c-95a7-df2b1379ec85.png)
 ![Divorce and marriage rate residuals](https://user-images.githubusercontent.com/77739272/191352276-f168b156-cf82-4403-9f3b-da419cbc2a43.png)
 ![Divorce and median age at marriage residuals](https://user-images.githubusercontent.com/77739272/191352308-fc69984b-735e-4638-905a-5cefb5e56534.png)
 
