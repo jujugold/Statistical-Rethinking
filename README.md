@@ -9,3 +9,4 @@ Here I use a simple multivariate model to disprove the theory that the number of
 
 ## Binomial regressions
 Here I generate two different binomial regressions to determine if there is bias in the graduate admissions of UC Berkely in 1973. This example is famous for being a known case of the Simpsons's Paradox. Accross departments, it appears that men are accepted at a higher rate. But after controlling for both gender and the within department variance of acceptance rates, this discrepancy is removed.
+![Posterior validation check - percent admitted on male and department](https://user-images.githubusercontent.com/77739272/191347994-c0f9db28-f480-4333-aac7-2698fdf91cb0.png)
