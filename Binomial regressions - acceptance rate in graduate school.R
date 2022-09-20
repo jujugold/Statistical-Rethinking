@@ -85,7 +85,11 @@ m10.9 <- map(
     bM ~ dnorm(0,10)
   ), data = admissions_data
 )
+# GLM just for fun
+m10.9glm <- glm(cbind(admit,reject) ~ male + dept, data = admissions_data, family = binomial)
 
+
+summary(m10.9glm)
 compare(m10.6,m10.7,m10.8,m10.9) # Here we use the WAIC to compare all the models we made. 
 # The most accurate model fitting to the data is  10.8, which makes us believe that 
 # the strongest factor determining admissions is the department someone applies to, regardless of gender. 
@@ -141,10 +145,5 @@ with(admissions_data,sum(applications[male=="0"& dept_ID<5]))
 # Here, individual department acceptance rates.
 
 
-89/(89+19)
-
-# GLM 
-m10.9glm <- glm(cbind(admit,reject) ~ male + dept, data = admissions_data, family = binomial)
 
 
-summary(m10.9glm)
